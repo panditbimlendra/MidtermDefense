@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SafeZone AI | Security Dashboard</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <!-- Overlay for expanded camera view -->
+    <div class="overlay" id="overlay"></div>
+
+    <!-- Sidebar Navigation -->
+    <div class="sidebar">
+      <div class="logo">
+        <i class="fas fa-shield-alt"></i>
+        <h1>Smart<span>Surveillance</span></h1>
+      </div>
+      <div class="nav-links">
+        <div class="nav-item active" data-target="dashboard">
+          <i class="fas fa-home"></i>
+          <span>Dashboard</span>
+        </div>
+        <div class="nav-item" data-target="cameras">
+          <i class="fas fa-video"></i>
+          <span>Cameras</span>
+        </div>
+        <div class="nav-item" data-target="alerts">
+          <i class="fas fa-bell"></i>
+          <span>Alerts</span>
+        </div>
+        <div class="nav-item" data-target="recordings">
+          <i class="fas fa-history"></i>
+          <span>Recordings</span>
+        </div>
+        <div class="nav-item" data-target="analytics">
+          <i class="fas fa-chart-line"></i>
+          <span>Analytics</span>
+        </div>
+        <div class="nav-item" data-target="settings">
+          <i class="fas fa-cog"></i>
+          <span>Settings</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Content Area -->
+    <div class="main-content">
+      <!-- Header Section -->
+      <div class="header">
+        <h2>Security Dashboard</h2>
+        <div class="header-controls">
+          <div class="search-box">
+            <i class="fas fa-search"></i>
+            <input
+              type="text"
+              id="search-input"
+              placeholder="Search devices..."
+            />
+          </div>
+          <div class="notification-bell">
+            <i class="fas fa-bell"></i>
+            <span class="notification-count">8</span>
+          </div>
+          <div class="user-profile">
+            <div class="user-avatar">JS</div>
+            <span>John Smith</span>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+        </div>
+      </div>
+
+      <!-- Dashboard Content -->
+      <div class="dashboard-content" id="dashboard">
+        <!-- Stats Cards -->
+        <div class="dashboard-grid">
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Active Cameras</div>
+              <div class="card-icon camera-icon">
+                <i class="fas fa-video"></i>
+              </div>
+            </div>
+            <div class="card-value">24/28</div>
+            <div class="card-footer">
+              <i class="fas fa-arrow-up trend-up"></i>
+              <span>2 cameras added</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Active Alerts</div>
+              <div class="card-icon alert-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+              </div>
+            </div>
+            <div class="card-value">8</div>
+            <div class="card-footer">
+              <i class="fas fa-arrow-down trend-down"></i>
+              <span>3 resolved in last hour</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Devices Online</div>
+              <div class="card-icon device-icon">
+                <i class="fas fa-server"></i>
+              </div>
+            </div>
+            <div class="card-value">95%</div>
+            <div class="card-footer">
+              <i class="fas fa-check-circle trend-up"></i>
+              <span>All systems operational</span>
+            </div>
+          </div>
+
+          <div class="card">
+            <div class="card-header">
+              <div class="card-title">Storage Usage</div>
+              <div class="card-icon analytics-icon">
+                <i class="fas fa-database"></i>
+              </div>
+            </div>
+            <div class="card-value">78%</div>
+            <div class="card-footer">
+              <i class="fas fa-exclamation-triangle trend-down"></i>
+              <span>15 days remaining</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Camera Grid -->
+        <div class="camera-grid">
+          <!-- Camera cards will be populated by JavaScript -->
+        </div>
+
+        <!-- Alert Panel -->
+        <div class="alert-panel">
+          <h3>
+            <i class="fas fa-exclamation-circle"></i> Recent Security Alerts
+          </h3>
+          <div class="alert-list">
+            <!-- Alert items will be populated by JavaScript -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Cameras Page (hidden by default) -->
+      <div class="page-content" id="cameras" style="display: none">
+        <h2 class="page-title">Camera Management</h2>
+        <div class="camera-grid-full">
+          <!-- Camera cards will be duplicated here for cameras page -->
+        </div>
+      </div>
+
+      <!-- Alerts Page (hidden by default) -->
+      <div class="page-content" id="alerts" style="display: none">
+        <h2 class="page-title">Security Alerts</h2>
+        <div class="alert-management">
+          <div class="alert-filters">
+            <button class="filter-btn active">All</button>
+            <button class="filter-btn">Critical</button>
+            <button class="filter-btn">Warning</button>
+            <button class="filter-btn">Info</button>
+            <button class="filter-btn">Resolved</button>
+          </div>
+          <div class="alert-list-full">
+            <!-- Full alert list will be populated by JavaScript -->
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
